@@ -78,6 +78,9 @@ jobs:
         TF_VAR_location: ${{ vars.TF_VAR_LOCATION }}
         TF_VAR_resource_group_name: ${{ vars.TF_VAR_RESOURCE_GROUP_NAME }}
         TF_VAR_subscription_id: ${{ vars.TF_VAR_SUBSCRIPTION_ID }}
+        TF_VAR_vnet_address_space: ${{ vars.TF_VAR_VNET_ADDRESS_SPACE }}
+        TF_VAR_vnet_name: ${{ vars.TF_VAR_VNET_NAME }}
+        TF_VAR_subnet_name: ${{ vars.TF_VAR_SUBNET_NAME }}
       run: env | sort
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
@@ -114,6 +117,9 @@ jobs:
         TF_VAR_location: ${{ vars.TF_VAR_LOCATION }}
         TF_VAR_resource_group_name: ${{ vars.TF_VAR_RESOURCE_GROUP_NAME }}
         TF_VAR_subscription_id: ${{ vars.TF_VAR_SUBSCRIPTION_ID }}
+        TF_VAR_vnet_address_space: ${{ vars.TF_VAR_VNET_ADDRESS_SPACE }}
+        TF_VAR_vnet_name: ${{ vars.TF_VAR_VNET_NAME }}
+        TF_VAR_subnet_name: ${{ vars.TF_VAR_SUBNET_NAME }}
       run: terraform plan -input=false
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
@@ -127,5 +133,8 @@ jobs:
         TF_VAR_location: ${{ vars.TF_VAR_LOCATION }}
         TF_VAR_resource_group_name: ${{ vars.TF_VAR_RESOURCE_GROUP_NAME }}
         TF_VAR_subscription_id: ${{ vars.TF_VAR_SUBSCRIPTION_ID }}
+        TF_VAR_vnet_address_space: ${{ vars.TF_VAR_VNET_ADDRESS_SPACE }}
+        TF_VAR_vnet_name: ${{ vars.TF_VAR_VNET_NAME }}
+        TF_VAR_subnet_name: ${{ vars.TF_VAR_SUBNET_NAME }}
       run: terraform apply -auto-approve -input=false
 
