@@ -127,6 +127,5 @@ jobs:
         TF_VAR_location: ${{ vars.TF_VAR_LOCATION }}
         TF_VAR_resource_group_name: ${{ vars.TF_VAR_RESOURCE_GROUP_NAME }}
         TF_VAR_subscription_id: ${{ vars.TF_VAR_SUBSCRIPTION_ID }}
-      if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
 
