@@ -78,6 +78,7 @@ jobs:
         TF_VAR_LOCATION: ${{ vars.LOCATION }}
         TF_VAR_RESOURCE_GROUP_NAME: ${{ vars.RESOURCE_GROUP_NAME }}
         TF_VAR_SUBSCRIPTION_ID: ${{ vars.SUBSCRIPTION_ID }}
+        VARIABLE_1: ${{ vars.VARIABLE_1 }}
       run: env | sort
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
